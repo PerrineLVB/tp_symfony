@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddGameController !
+{% endblock %}
+
+
+{% block body %}
+	<div class="container mt-5 w-75">
+		<h1 class="text-center">Add new game</h1>
+		{{form_start(form)}}
+		<div class="row">
+				{{form_row(form.title)}}
+		</div>
+		<div class="row">
+			<div class="col">
+				{{form_row(form.players)}}
+			</div>
+			<div class="col">
+				{{form_row(form.time)}}
+			</div>
+			<div class="col">
+				{{form_row(form.age)}}
+			</div>
+		</div>
+		<div class="row">
+				{{form_row(form.released)}}
+		</div>
+		<div class="row">
+				{{form_row(form.description)}}
+		</div>
+		<div class="row">
+				{{form_row(form.content)}}
+		</div>
+		<div class="row">
+				{{form_row(form.categories)}}
+		</div>
+		<div class="row text-center">
+			<div class="col">
+				{{form_row(form.save)}}
+			</div>
+			<div class="col">
+				{{form_row(form.reset)}}
+			</div>
+		</div>
+		{{form_end(form)}}
+	</div>
+{% endblock %}

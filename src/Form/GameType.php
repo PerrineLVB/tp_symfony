@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Game;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,6 +22,7 @@ class GameType extends AbstractType
                 'widget' => 'single_text'
             ])
             ->add('description')
+            ->add('picture', FileType::class)
             ->add('content')
             ->add('categories')
         ;

@@ -5,12 +5,13 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="container mb-4">
 		<div class="row">
-			<h1>{{ game.title }}</h1>
+			<h1 class="mt-4 text-center">{{ game.title }}</h1>
+			<img src="{{ asset('uploads/' ~ game.picture) }}" class="w-50 mx-auto">
 			<div>
 				{% for cat in game.categories %}
-					<span class="badge rounded-pill text-bg-dark">{{ cat.name }}</span>
+					<a href="{{ path('app_show_category', {id: cat.id}) }}" class="badge rounded-pill text-bg-dark mb-2">{{ cat.name }}</a>
 				{% endfor %}
 			</div>
 			<p>{{ game.description }}</p>

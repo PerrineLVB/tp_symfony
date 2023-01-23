@@ -28,6 +28,7 @@
 						<h3 class="card-title">{{ game.title }}</h3>
 					</div>
 					<div class="card-body">
+						<img src="{{ asset('uploads/' ~ game.picture) }}" class="card-img-top" alt={{ game.title}}>
 						<p class="card-text">{{ game.description}}</p>
 						<a href="{{ path('app_show_game', {id: game.id}) }}" class="card-link">Card link</a>
 					</div>

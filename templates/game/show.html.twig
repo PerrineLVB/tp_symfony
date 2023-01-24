@@ -14,7 +14,11 @@
 					<a href="{{ path('app_show_category', {id: cat.id}) }}" class="badge rounded-pill text-bg-dark mb-2">{{ cat.name }}</a>
 				{% endfor %}
 			</div>
-			<p>{{ game.description }}</p>
+			{{ game.description }}
+			<div class="ms-5">
+				<h4 class="mt-4">Contenu du jeu :</h4>
+				{{ game.content|raw }}
+			</div>
 		</div>
 	</div>
 {% endblock %}

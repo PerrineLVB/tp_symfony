@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    <div class="container">
+		<h1 class="text-center my-4">Game list</h1>
+		<div class="row">
+			{% for game in user.games %}
+				<div class="card mx-3" style="width: 18rem;">
+					<div class="card-head p-2">
+						<h3 class="card-title">{{ game.title }}</h3>
+					</div>
+					<div class="card-body">
+						<img src="{{ asset('uploads/' ~ game.picture) }}" class="card-img-top" alt={{ game.title }}>
+						<p class="card-text">{{ game.description }}</p>
+						<a href="{{ path('app_show_game', {id: game.id}) }}" class="card-link">Card link</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
